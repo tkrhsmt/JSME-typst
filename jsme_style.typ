@@ -13,7 +13,6 @@
 #let mincho = ("Harano Aji Mincho")
 #let english = ("Times New Roman")
 #let mathf = ("Latin Modern Math")
-#let rawf = ("Noto Mono for Powerline")
 
 //setting font size
 #let title_fontsize = 14pt
