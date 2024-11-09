@@ -176,11 +176,28 @@
     })
     //setting authors
     let value = 0
+    let input_value = ()
      while value < authors.len(){
       set text(size: subtitle_fontsize)
       authors.at(value).name
       if (authors.at(value).thanks != "") {
-        footnote(text(font: (english, mincho), authors.at(value).thanks))
+        let check_thanks_duplicate = -1
+        let check_num = 0
+        while check_num < value{
+          if authors.at(value).thanks == authors.at(check_num).thanks{
+             check_thanks_duplicate = check_num
+          }
+          check_num += 1
+        }
+        if check_thanks_duplicate == -1{//thanks was not duplicated
+          footnote(text(font: (english, mincho), authors.at(value).thanks))
+          input_value.insert(input_value.len(), value)
+        }
+        else{// thanks was duplicated
+        check_thanks_duplicate = check_thanks_duplicate
+          super("*" + str(check_thanks_duplicate + 1))
+          input_value.insert(input_value.len(), check_thanks_duplicate)
+        }
       }
       if (value != authors.len()-1) {
         [，]
@@ -202,13 +219,13 @@
     //setting english authors
     v(0.25em)
     let value = 0
-    let foot_value = 1
+    let foot_value = 0
     set align(center)
      while value < authors.len(){
       set text(size: subtitle_fontsize)
       authors.at(value).english_name
       if (authors.at(value).thanks != "") {
-        super("*" + str(foot_value))
+        super("*" + str(input_value.at(foot_value)+1))
         foot_value += 1
       }
       if (value != authors.len()-1) {
@@ -229,11 +246,16 @@
     let remove_value = ()
     while value < authors.len(){
       if remove_value.contains(value) == false {
-        super("*" + str(value + 1))
+        super("*" + str(input_value.at(value) + 1))
         let value2 = value + 1
+        let output_val = ()
+        output_val.insert(output_val.len(), input_value.at(value))
         while value2 < authors.len(){
-          if authors.at(value).english_thanks == authors.at(value2).english_thanks {
-            super(",*" + str(value2 + 1))
+          if authors.at(value).english_thanks == authors.at(value2).english_thanks{
+            if output_val.contains(input_value.at(value2)) == false{
+              super(",*" + str(input_value.at(value2) + 1))
+              output_val.insert(output_val.len(), input_value.at(value2))
+            }
             remove_value.insert(remove_value.len(), value2)
           }
           value2 += 1
