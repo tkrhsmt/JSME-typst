@@ -3,6 +3,7 @@
 
 #show: jsme_init
 #show: equate.with(breakable: true, number-mode: "line")
+#show: bib_init
 
 #show: jsme_title.with(
   title: [投稿論文作成について],
@@ -217,7 +218,7 @@ $
 
   （日本語文献例　著者1名の場合：@takeuchi-2005　著者2名の場合： (山田，佐藤，2013)
 
-  英語文献例　著者1名の場合：@nagashima-2005　著者2名の場合：@ahrendt-1951）
+  （英語文献例　著者1名の場合：@nagashima-2005　著者2名の場合：@ahrendt-1951）
 
   3名以上の著者がいる場合の著者名の記載方法は，代表著者名他の記載とする．
 
@@ -260,33 +261,322 @@ $
 本テンプレートファイルのスタイルを利用すると，各々の項目の書式が自動的に利用できるので便利である．
 
 #bibliography-list(lang: "jp")[
-  #bib-item()[Ahrendt, W. R. and Taplin, J. F., Automatic Feedback Control (1951), p.12, McGraw-Hill.]
-  #bib-item()[International Federation of Library Associations and Institutions, Digital libraries: Resources and project, IFLANET (online), available from 〈http://www.ifla.org/II/htm〉, (参照日 1999年11月30日).]
-  #bib-item()[亀山秀雄, 熱伝導性触媒体の製造方法, 特開平00-100100 (1990).]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of PM trapping and regeneration in a diesel particulate catalyst-membrane filter (DPMF), Transactions of Society of Automotive Engineers of Japan, Vol.41, No.1 (2010a), pp.103--108.]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter, Transactions of Society of Automotive Engineers of Japan, Vol.41, No.4 (2010b), pp.853--858.]
-  #bib-item()[Keer, L. M., Lin, W. and Achenbach, J. D., Resonance effects for a crack near a free surface, Transactions of the ASME, Journal of Applied Mechanics, Vol.51, No.1 (1984), pp.65--70.]
-  #bib-item()[長島昭, 機械技術の多様化と新しい学会活動—新年のご挨拶, 日本機械学会誌, Vol.108, No.1034 (2005), pp.1--2.]
-  #bib-item()[Tagawa, A. and Yamashita, T., Development of real time sensor for under sodium viewer, Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19) (2011), Paper No. ICONE19--43187.]
-  #bib-item()[Takeuchi, S., Yamazaki, T. and Kajishima, T., Study of solid-fluid interaction in body-fixed non-inertial frame of reference, Journal of Fluid Science and Technology, Vol.1, No.1 (2006), pp.1--11.]
-  #bib-item(label: <takeuchi-2005>, author: "竹内", year: 2005)[竹内芳美, 超精密マイクロ切削加工, 日本機械学会論文集C編, Vol.71, No.701 (2005), pp.1--4.]
-  #bib-item()[日本機械学会編, 伝熱ハンドブック (1979), p.123.]
-  #bib-item(label: <tsutahara-2003>, author: "蔦原他", year: 2003)[蔦原道久, 片岡武, 田村明紀, 差分格子ボルツマン法による界面活性剤のSISに関する研究, 日本機械学会第16回計算力学講演会講演論文集 (2003), pp.121--122.]
-  #bib-item()[渡邉智昭, 酒井康彦, 長田孝二, 寺島修, 伊藤靖仁, 早瀬敏幸, DNS による反応性物質濃度の乱流シュミット数・乱流拡散係数に関する研究, 日本機械学会論文集, Vol. 80, No. 809 (2014) , DOI:10.1299/transjsme.2014fe0008.]
+
+  #bib-ris()[
+    TY  - BOOK
+    TI  - Automatic feedback control
+    AU  - Ahrendt, W. R.
+    AU  - Taplin, John Ferguson
+    PY  - 1951
+    SP  - 12
+    PB  - McGraw-Hill
+    LA  - English
+    UR  - https://nla.gov.au/nla.cat-vn2276067
+    Y2  - 2024/11/24
+    ER  -
+  ]
+  #bib-ris(lang: true)[
+    TY  - ELEC
+    TI  - Digital libraries: Resources and project, IFLANET (online)
+    AU  - International Federation of Library Associations and Institutions
+    UR  - http://www.ifla.org/II/htm
+    Y1  - 1999
+    Y2  - 1999/11/30
+    ER  -
+  ]
+  #bib-ris(yomi: "Kameyama")[
+    TY  - PAT
+    AU  - 亀山秀雄
+    TI  - 熱伝導性触媒体の製造方法
+    PY  - 1990
+    DP  - 00-100100
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Karin, Preechar
+    AU  - Hanamura, Katsunori
+    PY  - 2010
+    SP  - 103
+    EP  - 108
+    T1  - Microscopic Visualization of {PM} trapping and regeneration in a diesel particulate catalyst-membrane filter ({DPMF})
+    VL  - 41
+    IS  - 1
+    JO  - Transactions of Society of Automotive Engineers of Japan
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Karin, Preechar
+    AU  - Hanamura, Katsunori
+    TI  - Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter
+    T2  - Transactions of Society of Automotive Engineers of Japan
+    VL  - 41
+    IS  - 4
+    PY  - 2010
+    SP  - 853
+    EP  - 858
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Keer, L. M.
+    AU  - Lin, W.
+    AU  - Achenbach, J. D.
+    TI  - Resonance effects for a crack near a free surface
+    T2  - Transactions of the ASME, Journal of Applied Mechanics
+    VL  - 51
+    IS  - 1
+    PY  - 1984
+    SP  - 65
+    EP  - 70
+    ER  -
+  ]
+  #bib-ris(yomi: "Nagashima")[
+    TY  - JOUR
+    AU  - 長島, 昭
+    TI  - 機械技術の多様化と新しい学会活動—新年のご挨拶
+    T2  - 日本機械学会誌
+    VL  - 108
+    IS  - 1034
+    PY  - 2005
+    SP  - 1
+    EP  - 2
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Tagawa, Akihiro
+    AU  - Yamashita, Takuya
+    TI  - Development of real time sensor for under sodium viewer
+    T2  - Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19)
+    PY  - 2011
+    NO  - Paper No. ICONE19--43187
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Takeuchi, Shintaro
+    AU  - Yamazaki, Takahiro
+    AU  - Kajishima, Takero
+    TI  - Study of solid-fluid interaction in body-fixed non-inertial frame of reference
+    T2  - Journal of Fluid Science and Technology
+    VL  - 1
+    IS  - 1
+    PY  - 2006
+    SP  - 1
+    EP  - 11
+    ER  -
+  ]
+  #bib-ris(yomi: "Takeuchi, yoshimi", label: <takeuchi-2005>)[
+    TY  - JOUR
+    AU  - 竹内, 芳美
+    TI  - 超精密マイクロ切削加工
+    T2  - 日本機械学会論文集C編
+    VL  - 71
+    IS  - 701
+    PY  - 2005
+    SP  - 1
+    EP  - 4
+    ER  -
+  ]
+  #bib-ris(yomi: "Japan Society of Mechanical Engineers")[
+    TY  - BOOK
+    AU  - 日本機械学会編
+    TI  - 伝熱ハンドブック
+    PY  - 1979
+    SP  - 123
+    ER  -
+  ]
+  #bib-ris(yomi: "Tsutahara", label: <tsutahara-2003>)[
+    TY  - JOUR
+    AU  - 蔦原, 道久
+    AU  - 片岡, 武
+    AU  - 田村明紀
+    TI  - 差分格子ボルツマン法による界面活性剤のSISに関する研究
+    T2  - 日本機械学会第16回計算力学講演会講演論文集
+    PY  - 2003
+    SP  - 121
+    EP  - 122
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - 渡邉, 智昭
+    AU  - 酒井, 康彦
+    AU  - 長田, 孝二
+    AU  - 寺島, 修
+    AU  - 伊藤, 靖仁
+    AU  - 早瀬, 敏幸
+    TI  - DNS による反応性物質濃度の乱流シュミット数・乱流拡散係数に関する研究
+    T2  - 日本機械学会論文集
+    VL  - 80
+    IS  - 809
+    PY  - 2014
+    DO  - 10.1299/transjsme.2014fe0008
+    ER  -
+  ]
 ]
 
 #bibliography-list(lang: "en")[
-  #bib-item(label: <ahrendt-1951>, author: "Ahrendt and Taplin", year: "1951")[Ahrendt, W. R. and Taplin, J. F., Automatic Feedback Control (1951), p.12, McGraw-Hill.]
-  #bib-item()[International Federation of Library Associations and Institutions, Digital libraries: Resources and project, IFLANET (online), available from 〈http://www.ifla.org/II/htm〉, (accessed on 30 November, 1999).]
-  #bib-item()[Kameyama, H., Production method of thermal conductive catalyst, Japanese patent disclosure H00-100100 (1990).]
-  #bib-item(label: <karin-2010>, author: "Karin and Hanamura", year: "2010a")[Karin, P. and Hanamura, K., Microscopic visualization of PM trapping and regeneration in a diesel particulate catalyst-membrane filter (DPMF), Transactions of Society of Automotive Engineers of Japan, Vol.41, No.1 (2010a), pp.103--108.]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter, Transactions of Society of Automotive Engineers of Japan, Vol.41, No.4 (2010b), pp.853--858.]
-  #bib-item()[Keer, L. M., Lin, W. and Achenbach, J. D., Resonance effects for a crack near a free surface, Transactions of the ASME, Journal of Applied Mechanics, Vol.51, No.1 (1984), pp.65--70.]
-  #bib-item(label: <nagashima-2005>, author: "Nagashima", year: "2005")[Nagashima, A., New year's greeting, Journal of the Japan Society of Mechanical Engineers, Vol.108, No.1034 (2005), pp.1--2 (in Japanese).]
-  #bib-item()[Tagawa, A. and Yamashita, T., Development of real time sensor for under sodium viewer, Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19) (2011), Paper No. ICONE19--43187.]
-  #bib-item(label: <takeuchi-2006>, author: "Takeuchi et al.", year: "2006")[Takeuchi, S., Yamazaki, T. and Kajishima, T., Study of solid-fluid interaction in body-fixed non-inertial frame of reference, Journal of Fluid Science and Technology, Vol.1, No.1 (2006), pp.1--11.]
-  #bib-item()[Takeuchi, Y., Ultraprecision micromilling technology, Transactions of the Japan Society of Mechanical Engineers, Series C, Vol.71, No.701 (2005), pp.1--4 (in Japanese).]
-  #bib-item()[The Japan Society of Mechanical Engineers ed., JSME Data Handbook: Heat Transfer (1979), p.123, The Japan Society of Mechanical Engineers (in Japanese).]
-  #bib-item()[Tsutahara, M., Tamura, A. and Kataoka, T., A study of SIS of surfactant by the finite difference lattice Boltzmann method, Proceedings of the 16th Computational Mechanics Conference (2003), pp.121--122 (in Japanese).]
-  #bib-item()[Watanabe, T., Sakai, Y., Nagata, K., Terashima, O., Ito, Y. and Hayase, T., DNS of turbulent Schmidt number and eddy diffusivity for reactive concentrations, Transactions of the JSME (in Japanese), Vol. 80, No. 809 (2014), DOI:10.1299/transjsme.2014fe0008.]
+  #bib-ris(label: <ahrendt-1951>)[
+    TY  - BOOK
+    TI  - Automatic feedback control
+    AU  - Ahrendt, W. R.
+    AU  - Taplin, John Ferguson
+    PY  - 1951
+    SP  - 12
+    PB  - McGraw-Hill
+    LA  - English
+    UR  - https://nla.gov.au/nla.cat-vn2276067
+    Y2  - 2024/11/24
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - ELEC
+    TI  - Digital libraries: {Resources} and project, {IFLANET} (online)
+    AU  - International Federation of Library Associations and Institutions
+    UR  - http://www.ifla.org/II/htm
+    Y1  - 1999
+    Y2  - 1999/11/30
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - PAT
+    AU  - Kameyama, H.
+    TI  - Production method of thermal conductive catalyst
+    PY  - 1990
+    DP  - H00-100100
+    ER  -
+  ]
+  #bib-ris(label: <karin-2010>)[
+    TY  - JOUR
+    AU  - Karin, Preechar
+    AU  - Hanamura, Katsunori
+    PY  - 2010
+    SP  - 103
+    EP  - 108
+    T1  - Microscopic Visualization of {PM} trapping and regeneration in a diesel particulate catalyst-membrane filter ({DPMF})
+    VL  - 41
+    IS  - 1
+    JO  - Transactions of Society of Automotive Engineers of Japan
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Karin, Preechar
+    AU  - Hanamura, Katsunori
+    TI  - Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter
+    T2  - Transactions of Society of Automotive Engineers of Japan
+    VL  - 41
+    IS  - 4
+    PY  - 2010
+    SP  - 853
+    EP  - 858
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Keer, L. M.
+    AU  - Lin, W.
+    AU  - Achenbach, J. D.
+    TI  - Resonance effects for a crack near a free surface
+    T2  - Transactions of the ASME, Journal of Applied Mechanics
+    VL  - 51
+    IS  - 1
+    PY  - 1984
+    SP  - 65
+    EP  - 70
+    ER  -
+  ]
+  #bib-ris(label: <nagashima-2005>)[
+    TY  - JOUR
+    AU  - Nagashima, A.
+    TI  - New year's greeting
+    T2  - Journal of the Japan Society of Mechanical Engineers
+    VL  - 108
+    IS  - 1034
+    PY  - 2005
+    SP  - 1
+    EP  - 2
+    NO  - (in Japanese)
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Tagawa, Akihiro
+    AU  - Yamashita, Takuya
+    TI  - Development of real time sensor for under sodium viewer
+    T2  - Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19)
+    PY  - 2011
+    NO  - Paper No. ICONE19--43187
+    ER  -
+  ]
+  #bib-ris(label: <takeuchi-2006>)[
+    TY  - JOUR
+    AU  - Takeuchi, Shintaro
+    AU  - Yamazaki, Takahiro
+    AU  - Kajishima, Takero
+    TI  - Study of solid-fluid interaction in body-fixed non-inertial frame of reference
+    T2  - Journal of Fluid Science and Technology
+    VL  - 1
+    IS  - 1
+    PY  - 2006
+    SP  - 1
+    EP  - 11
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Takeuchi, Y.
+    TI  - Ultraprecision micromilling technology
+    T2  - Transactions of the Japan Society of Mechanical Engineers, Series C
+    VL  - 71
+    IS  - 701
+    PY  - 2005
+    SP  - 1
+    EP  - 4
+    NO  - (in Japanese)
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - BOOK
+    AU  - The Japan Society of Mechanical Engineers ed.
+    TI  - J{SME Data Handbook: Heat Transfer}
+    PY  - 1979
+    SP  - 123
+    PB  - The Japan Society of Mechanical Engineers
+    NO  - (in Japanese)
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Tsutahara, M.
+    AU  - Tamura, A.
+    AU  - Kataoka, T.
+    TI  - A study of SIS of surfactant by the finite difference lattice Boltzmann method
+    T2  - Proceedings of the 16th Computational Mechanics Conference
+    PY  - 2003
+    SP  - 121
+    EP  - 122
+    NO  - (in Japanese)
+    ER  -
+  ]
+  #bib-ris()[
+    TY  - JOUR
+    AU  - Watanabe, T.
+    AU  - Sakai, Y.
+    AU  - Nagata, K.
+    AU  - Terashima, O.
+    AU  - Ito, Y.
+    AU  - Hayase, T.
+    TI  - DNS} of turbulent Schmidt number and eddy diffusivity for reactive concentrations
+    T2  - Transactions of the JSME
+    VL  - 80
+    IS  - 809
+    PY  - 2014
+    DO  - 10.1299/transjsme.2014fe0008
+    NO  - (in Japanese)
+    ER  -
+  ]
 ]

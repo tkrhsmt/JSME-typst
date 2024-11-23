@@ -676,7 +676,7 @@
 //  MAIN FUNCTION
 // --------------------------------------------------
 
-#let from_ris_to_biblist(ris) = {
+#let from_ris_to_biblist(ris, lang) = {
 
   //出力するリスト
   let it_arr = ()
@@ -691,7 +691,13 @@
   //文献typeを取得
   let TYPE = find_array(ris_list, [TY]).at(0)
   //日本語が含まれているかどうか
-  let is_japanese = check_japanese_ris(ris_list)
+  let is_japanese = false
+  if lang == false{
+    is_japanese = check_japanese_ris(ris_list)
+  }
+  else{
+    is_japanese = lang
+  }
 
   if TYPE == "JOUR"{
     it_arr = jsme_type_JOUR(ris_list, is_japanese)

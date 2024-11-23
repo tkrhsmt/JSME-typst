@@ -26,7 +26,7 @@
           it.element.supplement.children.at(0) + ", " + it.element.supplement.children.at(2) + ")"
         }
         else{//その他
-          it.element.supplement.children.at(0) + " (" + it.element.supplement.children.at(2) + ")"
+          "(" + it.element.supplement.children.at(0) + ", " + it.element.supplement.children.at(2) + ")"
         }
 
       }
@@ -204,9 +204,9 @@
 }
 
 //ris形式で文献を出力する関数
-#let bib-ris(it, label: none, yomi: none) = {
+#let bib-ris(it, label: none, yomi: none, lang: false) = {
 
-  let it_str = from_ris_to_biblist(it)
+  let it_str = from_ris_to_biblist(it, lang)
   let yomi_str = yomi
   if yomi_str == none{
     yomi_str = it_str.at(4)

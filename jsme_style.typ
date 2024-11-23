@@ -118,16 +118,6 @@
       it.supplement
     }
   })
-  // set "bib_style.typ" format
-  show ref: it =>{
-
-      if it.element.kind == "bib"{
-        it.element.supplement
-      }
-      else{
-        it
-      }
-  }
 
   //setting strong text
   show strong: set text(font: (english, mincho), weight: "bold")
