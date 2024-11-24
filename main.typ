@@ -400,22 +400,7 @@ $
     EP  - 122
     ER  -
   ]
-  #bib-ris()[
-    TY  - JOUR
-    AU  - 渡邉, 智昭
-    AU  - 酒井, 康彦
-    AU  - 長田, 孝二
-    AU  - 寺島, 修
-    AU  - 伊藤, 靖仁
-    AU  - 早瀬, 敏幸
-    TI  - DNS による反応性物質濃度の乱流シュミット数・乱流拡散係数に関する研究
-    T2  - 日本機械学会論文集
-    VL  - 80
-    IS  - 809
-    PY  - 2014
-    DO  - 10.1299/transjsme.2014fe0008
-    ER  -
-  ]
+  #bib-item()[渡邉智昭, 酒井康彦, 長田孝二, 寺島修, 伊藤靖仁, 早瀬敏幸, DNS による反応性物質濃度の乱流シュミット数・乱流拡散係数に関する研究, 日本機械学会論文集, Vol. 80, No. 809 (2014) , DOI:10.1299/transjsme.2014fe0008.]
 ]
 
 #bibliography-list(lang: "en")[
@@ -562,21 +547,5 @@ $
     NO  - (in Japanese)
     ER  -
   ]
-  #bib-ris()[
-    TY  - JOUR
-    AU  - Watanabe, T.
-    AU  - Sakai, Y.
-    AU  - Nagata, K.
-    AU  - Terashima, O.
-    AU  - Ito, Y.
-    AU  - Hayase, T.
-    TI  - DNS} of turbulent Schmidt number and eddy diffusivity for reactive concentrations
-    T2  - Transactions of the JSME
-    VL  - 80
-    IS  - 809
-    PY  - 2014
-    DO  - 10.1299/transjsme.2014fe0008
-    NO  - (in Japanese)
-    ER  -
-  ]
+  #bib-item()[Watanabe, T., Sakai, Y., Nagata, K., Terashima, O., Ito, Y. and Hayase, T., DNS of turbulent Schmidt number and eddy diffusivity for reactive concentrations, Transactions of the JSME (in Japanese), Vol. 80, No. 809 (2014), DOI:10.1299/transjsme.2014fe0008.]
 ]
