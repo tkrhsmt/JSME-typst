@@ -107,7 +107,6 @@ RIS形式は現時点で全ての形式に対応できておらず(JOUR・BOOK�
         PB  - McGraw-Hill
         LA  - English
         UR  - https://nla.gov.au/nla.cat-vn2276067
-        Y2  - 2024/11/24
         ER  -
     ]
 ]

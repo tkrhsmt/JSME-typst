@@ -329,7 +329,7 @@
   else if month_str == "11"{
     return "November"
   }
-  else if month_str == "11"{
+  else if month_str == "12"{
     return "December"
   }
   else{
