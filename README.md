@@ -96,18 +96,20 @@ RIS形式は現時点で全ての形式に対応できておらず(JOUR・BOOK�
 
 例：
 ```typst
-#bib-ris()[
-    TY  - BOOK
-    TI  - Automatic feedback control
-    AU  - Ahrendt, W. R.
-    AU  - Taplin, John Ferguson
-    PY  - 1951
-    SP  - 12
-    PB  - McGraw-Hill
-    LA  - English
-    UR  - https://nla.gov.au/nla.cat-vn2276067
-    Y2  - 2024/11/24
-    ER  -
+#bibliography-list(lang: "jp")[
+    #bib-ris()[
+        TY  - BOOK
+        TI  - Automatic feedback control
+        AU  - Ahrendt, W. R.
+        AU  - Taplin, John Ferguson
+        PY  - 1951
+        SP  - 12
+        PB  - McGraw-Hill
+        LA  - English
+        UR  - https://nla.gov.au/nla.cat-vn2276067
+        Y2  - 2024/11/24
+        ER  -
+    ]
 ]
 ```
 
