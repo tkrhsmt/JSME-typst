@@ -59,14 +59,16 @@ Typstでは，文献をBibLaTeXで管理するのが主流です．
 現状のTypstでは，複数のBibLaTeXを読み込むことができないため，独自の文献管理システムを導入しています．
 文献の直書き方法に関しては，[文献の直書き方法](https://zrbabbler.hatenablog.com/entry/2024/05/06/180901) を参考にして作成しており，これを拡張しています．
 
-現状，JSME-typst内では2通りの文献の記述方法ができます．
+現状，JSME-typst内では3通りの文献の記述方法ができます．
 
 1. 文献を直書きする
 1. RIS形式で記述する
+1. BibTeX形式で記述する
 
 RIS形式は現時点で全ての形式に対応できておらず(JOUR・BOOK・ELEC・WEB・PATの5つのみ)，これ以外は直書きをする必要があります．
-基本的な文献は上記の5つで対応できますので，原則RIS形式を選択するのが良いと思います．
-もちろん，2つの書き方を混在させることも可能で，上記で対応できない文献のみ直書きが推奨されます．
+BibTeX形式は，[JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst)で対応している形式のみ使用できますが，まったく同じ動作をするとは限りません．
+基本的な文献はBibTeXで対応できますので，原則BibTeX形式を選択するのが良いと思います．
+もちろん，3つの書き方を混在させることも可能で，上記で対応できない文献のみ直書きが推奨されます．
 
 ### 文献を直書きする方法
 
@@ -118,8 +120,34 @@ RIS形式は現時点で全ての形式に対応できておらず(JOUR・BOOK�
 - `yomi` : 文献の"読み"を英語で入力します．これは，文献を名前順に並び替えるときに利用されます．英語文献の際には設定する必要はありませんが，日本語文献の場合正しい並び順にするため，設定する必要があります．このとき，最初の文字は大文字にしてください．（例：`yomi: "Ahrendt"`）
 - `lang` : 文献の言語を設定します．デフォルトは英語で，日本語の場合は`true`を選択します．文献の言語は原則自動的に識別できますが，RIS形式内の文字が全て英字であり，かつ文献を日本語として認識させたい場合には明示的に`lang`を設定する必要があります．（例：`lang: true`）
 
+### BibTeX形式で文献を書く方法
+
+- 文献は，`bibliography-list`関数の中に書き，直書きと同列に扱えます．
+- BibTeX形式で文献を記述するには，`bib-tex`関数を利用します．
+
+例
+```typst
+#bibliography-list(lang: "en")[
+    #bib-tex()[
+        @book{ahrendt-1951,
+        title     ={Automatic Feedback Control},
+        author    ={Ahrendt, William Robert and Taplin, John Ferguson},
+        year      ={1951},
+        publisher ={McGraw-Hill},
+        language  ={English},
+        url       ={https://nla.gov.au/nla.cat-vn2276067},
+        }
+    ]
+]
+```
+
+`bib-tex`関数には，以下の引数を設定できます．
+
+- `lang` : 文献の言語を設定します．デフォルトは英語で，日本語の場合は`true`を選択します．文献の言語は原則自動的に識別できますが，RIS形式内の文字が全て英字であり，かつ文献を日本語として認識させたい場合には明示的に`lang`を設定する必要があります．（例：`lang: true`）
+
 ## 参考文献
 
 1. [日本機械学会オリジナルのテンプレート](https://www.jsme.or.jp/publish/transact/for-authors.html)
 1. [Typst公式ドキュメント](https://typst.app/docs/)
 1. [文献の直書き方法](https://zrbabbler.hatenablog.com/entry/2024/05/06/180901)
+1. [JSME-bst](https://github.com/Yuki-MATSUKAWA/JSME-bst)

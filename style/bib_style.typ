@@ -43,6 +43,8 @@
 
 //JSMEの文献形式に合わせた ris設定ファイル
 #import "ris_jsme_style.typ" : *
+//JSMEの文献形式に合わせた bibtex設定ファイル
+#import "tex_jsme_style.typ" : *
 
 //文献を名前順に並び替える
 #let bib_name_changer(bib_output) = {
@@ -83,7 +85,9 @@
   let bef_author = ""
   let bef_year = ""
 
-  for value in bib_output{
+  let count = 0
+  while count < bib_output_year.len(){
+    let value = bib_output_year.at(count)
 
     if value.at(1) != none and value.at(2) != none{
       if value.at(1) == bef_author and value.at(2) == bef_year{//前の項目と重複していたら
@@ -111,12 +115,15 @@
           }
           num += 1
         }
+        bef_author = ""
+        bef_year = ""
       }
       else{//重複していなければ
         bef_author = value.at(1)
         bef_year = value.at(2)
       }
     }
+    count += 1
   }
 
   return bib_output_year
@@ -213,6 +220,12 @@
   }
 
   return (it_str.at(0), it_str.at(2), it_str.at(3), label, yomi_str, it_str.at(1))
+}
+
+//tex形式で文献を出力する関数
+#let bib-tex(it, lang: false) = {
+  let tmp = from_tex_to_biblist(it, lang: lang)
+  return tmp
 }
 
 // --------------------------------------------------
