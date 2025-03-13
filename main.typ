@@ -1,7 +1,9 @@
 #import "style/jsme_style.typ" : *
-#import "style/bib_style.typ" : *
+#import "bib-style/lib.typ" : *
 
 #show: jsme_init
+#import bib_setting_jsme: *
+#show: bib_init
 #show: equate.with(breakable: true, number-mode: "line")
 #show: bib_init
 
@@ -171,7 +173,7 @@
     align: center,
     stroke: (top: none, bottom: none, right: none, left: none),
     table.hline(start: 0, stroke: 0.5pt, y: 0),
-    table.header([$T [degree.c]$], table.vline(start: 0, stroke: 0.5pt),
+    table.header([$T [upright(degree C)]$], table.vline(start: 0, stroke: 0.5pt),
     [$rho ["kg/m"^3]$], table.vline(start: 0, stroke: 0.5pt),
     [$c_p ["J/(kg" dot "K)"]$], table.vline(start: 0, stroke: 0.5pt),
     [$eta ["Pa" dot upright(s)]$], table.vline(start: 0, stroke: 0.5pt),
@@ -216,17 +218,17 @@ $
 
 + 本文中の引用箇所には，著者名と発行年を記載する．
 
-  （日本語文献例　著者1名の場合：@takeuchi-2005　著者2名の場合： (山田，佐藤，2013)
+   （日本語文献例　著者1名の場合：#citep(<Takeuchi-2005>)　著者2名の場合： (山田，佐藤，2013)
 
-  （英語文献例　著者1名の場合：@nagashima-2005　著者2名の場合：@ahrendt-1951）
+  （英語文献例　著者1名の場合：#citep(<Nagashima-2005-en>)　著者2名の場合：#citep(<Ahrendt-1951-en>)）
 
   3名以上の著者がいる場合の著者名の記載方法は，代表著者名他の記載とする．
 
-  （日本語文献例 @tsutahara-2003 英語文献例 @takeuchi-2006）
+  （日本語文献例 #citep(<Tsutahara-2003>) 英語文献例 #citep(<Takeuchi-2006-en>)）
 
   発行年が同じである同じ著者からの２つ以上の引用を記載する場合には，発行年の後にa，b，cを記載する．
 
-  （例　@karin-2010）
+  （例　@Karin-2010b-en[Karin and Hanamura, 2010a], @Karin-2010a-en[2010b)]）
 
 + 引用した文献は，本文末尾に*文献*および*References*としてアルファベット順にまとめて記載する．
 
@@ -260,5 +262,10 @@ $
 
 本テンプレートファイルのスタイルを利用すると，各々の項目の書式が自動的に利用できるので便利である．
 
-#include "mybib_jp.typ"
-#include "mybib_en.typ"
+#bibliography-list(
+  ..bib-file(read("japanese-bib.bib"))
+)
+
+#bibliography-list(
+  ..bib-file(read("english-bib.bib"))
+)
