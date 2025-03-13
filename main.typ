@@ -267,5 +267,6 @@ $
 )
 
 #bibliography-list(
-  ..bib-file(read("english-bib.bib"))
+  ..bib-file(read("english-bib.bib")),
+  lang: "en"
 )
