@@ -1,10 +1,11 @@
-#import "jsme_style.typ" : *
+#import "style/jsme_style.typ" : *
 #import "bib-style/lib.typ" : *
 
 #show: jsme_init
 #import bib_setting_jsme: *
 #show: bib_init
 #show: equate.with(breakable: true, number-mode: "line")
+#show: bib_init
 
 #show: jsme_title.with(
   title: [投稿論文作成について],
@@ -219,7 +220,7 @@ $
 
    （日本語文献例　著者1名の場合：#citep(<Takeuchi-2005>)　著者2名の場合： (山田，佐藤，2013)
 
-  英語文献例　著者1名の場合：#citep(<Nagashima-2005-en>)　著者2名の場合：#citep(<Ahrendt-1951-en>)）
+  （英語文献例　著者1名の場合：#citep(<Nagashima-2005-en>)　著者2名の場合：#citep(<Ahrendt-1951-en>)）
 
   3名以上の著者がいる場合の著者名の記載方法は，代表著者名他の記載とする．
 
@@ -261,6 +262,10 @@ $
 
 本テンプレートファイルのスタイルを利用すると，各々の項目の書式が自動的に利用できるので便利である．
 
-#bibliography-list(..bib-file(read("japanese-bib.bib")))
+#bibliography-list(
+  ..bib-file(read("japanese-bib.bib"))
+)
 
-#bibliography-list(..bib-file(read("english-bib.bib")), lang: "en")
+#bibliography-list(
+  ..bib-file(read("english-bib.bib"))
+)
