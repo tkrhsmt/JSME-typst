@@ -1,7 +1,9 @@
 #import "jsme_style.typ" : *
-#import "bib_style.typ" : *
+#import "bib-style/lib.typ" : *
 
 #show: jsme_init
+#import bib_setting_jsme: *
+#show: bib_init
 #show: equate.with(breakable: true, number-mode: "line")
 
 #show: jsme_title.with(
@@ -215,17 +217,17 @@ $
 
 + 本文中の引用箇所には，著者名と発行年を記載する．
 
-  （日本語文献例　著者1名の場合：@takeuchi-2005　著者2名の場合： (山田，佐藤，2013)
+   （日本語文献例　著者1名の場合：#citep(<Takeuchi-2005>)　著者2名の場合： (山田，佐藤，2013)
 
-  英語文献例　著者1名の場合：@nagashima-2005　著者2名の場合：@ahrendt-1951）
+  英語文献例　著者1名の場合：#citep(<Nagashima-2005-en>)　著者2名の場合：#citep(<Ahrendt-1951-en>)）
 
   3名以上の著者がいる場合の著者名の記載方法は，代表著者名他の記載とする．
 
-  （日本語文献例 @tsutahara-2003 英語文献例 @takeuchi-2006）
+  （日本語文献例 #citep(<Tsutahara-2003>) 英語文献例 #citep(<Takeuchi-2006-en>)）
 
   発行年が同じである同じ著者からの２つ以上の引用を記載する場合には，発行年の後にa，b，cを記載する．
 
-  （例　@karin-2010）
+  （例　@Karin-2010b-en[Karin and Hanamura, 2010a], @Karin-2010a-en[2010b)]）
 
 + 引用した文献は，本文末尾に*文献*および*References*としてアルファベット順にまとめて記載する．
 
@@ -259,34 +261,6 @@ $
 
 本テンプレートファイルのスタイルを利用すると，各々の項目の書式が自動的に利用できるので便利である．
 
-#bibliography-list(lang: "jp")[
-  #bib-item()[Ahrendt, W. R. and Taplin, J. F., Automatic Feedback Control (1951), p.12, McGraw-Hill.]
-  #bib-item()[International Federation of Library Associations and Institutions, Digital libraries: Resources and project, IFLANET (online), available from 〈http://www.ifla.org/II/htm〉, (参照日 1999年11月30日).]
-  #bib-item()[亀山秀雄, 熱伝導性触媒体の製造方法, 特開平00-100100 (1990).]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of PM trapping and regeneration in a diesel particulate catalyst-membrane filter (DPMF), Transactions of Society of Automotive Engineers of Japan, Vol.41, No.1 (2010a), pp.103--108.]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter, Transactions of Society of Automotive Engineers of Japan, Vol.41, No.4 (2010b), pp.853--858.]
-  #bib-item()[Keer, L. M., Lin, W. and Achenbach, J. D., Resonance effects for a crack near a free surface, Transactions of the ASME, Journal of Applied Mechanics, Vol.51, No.1 (1984), pp.65--70.]
-  #bib-item()[長島昭, 機械技術の多様化と新しい学会活動—新年のご挨拶, 日本機械学会誌, Vol.108, No.1034 (2005), pp.1--2.]
-  #bib-item()[Tagawa, A. and Yamashita, T., Development of real time sensor for under sodium viewer, Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19) (2011), Paper No. ICONE19--43187.]
-  #bib-item()[Takeuchi, S., Yamazaki, T. and Kajishima, T., Study of solid-fluid interaction in body-fixed non-inertial frame of reference, Journal of Fluid Science and Technology, Vol.1, No.1 (2006), pp.1--11.]
-  #bib-item(label: <takeuchi-2005>, key: "竹内，2005")[竹内芳美, 超精密マイクロ切削加工, 日本機械学会論文集C編, Vol.71, No.701 (2005), pp.1--4.]
-  #bib-item()[日本機械学会編, 伝熱ハンドブック(1979), p.123.]
-  #bib-item(label: <tsutahara-2003>, key: "蔦原他，2003")[蔦原道久, 片岡武, 田村明紀, 差分格子ボルツマン法による界面活性剤のSISに関する研究, 日本機械学会第16回計算力学講演会講演論文集 (2003), pp.121--122.]
-  #bib-item()[渡邉智昭, 酒井康彦, 長田孝二, 寺島修, 伊藤靖仁, 早瀬敏幸, DNS による反応性物質濃度の乱流シュミット数・乱流拡散係数に関する研究, 日本機械学会論文集, Vol. 80, No. 809 (2014) , DOI:10.1299/transjsme.2014fe0008.]
-]
+#bibliography-list(..bib-file(read("japanese-bib.bib")))
 
-#bibliography-list(lang: "en")[
-  #bib-item(label: <ahrendt-1951>, key: "Ahrendt and Taplin, 1951")[Ahrendt, W. R. and Taplin, J. F., Automatic Feedback Control (1951), p.12, McGraw-Hill.]
-  #bib-item()[International Federation of Library Associations and Institutions, Digital libraries: Resources and project, IFLANET (online), available from 〈http://www.ifla.org/II/htm〉, (accessed on 30 November, 1999).]
-  #bib-item()[Kameyama, H., Production method of thermal conductive catalyst, Japanese patent disclosure H00-100100 (1990).]
-  #bib-item(label: <karin-2010>, key: "Karin and Hanamura, 2010a, 2010b")[Karin, P. and Hanamura, K., Microscopic visualization of PM trapping and regeneration in a diesel particulate catalyst-membrane filter (DPMF), Transactions of Society of Automotive Engineers of Japan, Vol.41, No.1 (2010a), pp.103--108.]
-  #bib-item()[Karin, P. and Hanamura, K., Microscopic visualization of particulate matter trapping and oxidation behaviors in a diesel particulate catalyst-membrane filter, Transactions of Society of Automotive Engineers of Japan, Vol.41, No.4 (2010b), pp.853--858.]
-  #bib-item()[Keer, L. M., Lin, W. and Achenbach, J. D., Resonance effects for a crack near a free surface, Transactions of the ASME, Journal of Applied Mechanics, Vol.51, No.1 (1984), pp.65--70.]
-  #bib-item(label: <nagashima-2005>, key: "Nagashima, 2005")[Nagashima, A., New year's greeting, Journal of the Japan Society of Mechanical Engineers, Vol.108, No.1034 (2005), pp.1--2 (in Japanese).]
-  #bib-item()[Tagawa, A. and Yamashita, T., Development of real time sensor for under sodium viewer, Proceedings of the 19th International Conference on Nuclear Engineering (ICONE-19) (2011), Paper No. ICONE19--43187.]
-  #bib-item(label: <takeuchi-2006>, key: "Takeuchi et al., 2006")[Takeuchi, S., Yamazaki, T. and Kajishima, T., Study of solid-fluid interaction in body-fixed non-inertial frame of reference, Journal of Fluid Science and Technology, Vol.1, No.1 (2006), pp.1--11.]
-  #bib-item()[Takeuchi, Y., Ultraprecision micromilling technology, Transactions of the Japan Society of Mechanical Engineers, Series C, Vol.71, No.701 (2005), pp.1--4 (in Japanese).]
-  #bib-item()[The Japan Society of Mechanical Engineers ed., JSME Data Handbook: Heat Transfer (1979), p.123, The Japan Society of Mechanical Engineers (in Japanese).]
-  #bib-item()[Tsutahara, M., Tamura, A. and Kataoka, T., A study of SIS of surfactant by the finite difference lattice Boltzmann method, Proceedings of the 16th Computational Mechanics Conference (2003), pp.121--122 (in Japanese).]
-  #bib-item()[Watanabe, T., Sakai, Y., Nagata, K., Terashima, O., Ito, Y. and Hayase, T., DNS of turbulent Schmidt number and eddy diffusivity for reactive concentrations, Transactions of the JSME (in Japanese), Vol. 80, No. 809 (2014), DOI:10.1299/transjsme.2014fe0008.]
-]
+#bibliography-list(..bib-file(read("english-bib.bib")), lang: "en")

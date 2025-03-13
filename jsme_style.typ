@@ -82,19 +82,21 @@
   show figure.where(// if figure kind is table ...
     kind: table
   ): set figure.caption(position: top)
-  show figure.where(
-    kind: table
-  ): set figure(supplement: "Table")
-  show figure.where(// if figure kind is image ...
-    kind: image
-  ): set figure(supplement: "Fig.")
   set figure.caption(separator: [　])
   show figure.caption: it => {// if figure caption is image ...
     set text(size: 9.5pt)
     set par(leading: 4.5pt, justify: true)
+
+    let supplement = it.supplement
+    if supplement == [表]{
+      supplement = "Table"
+    }
+    else if supplement == [図]{
+      supplement = "Fig."
+    }
     grid(
       columns: 2,
-      [#it.supplement #context it.counter.display()　],
+      [#supplement #context it.counter.display()　],
       align(left)[#it.body]
     )
   }
@@ -106,28 +108,6 @@
       columns: (2em, auto),
       [],it
     )
-  }
-  // setting ref
-  // In reference, set figures and tables to 図 or 表
-  set ref(supplement: it=>{
-    let body-func = it.body.func()
-    if body-func == table{
-      [図]
-    }else if body-func == image{
-      [表]
-    }else{
-      it.supplement
-    }
-  })
-  // set "bib_style.typ" format
-  show ref: it =>{
-
-      if it.element.kind == "bib"{
-        it.element.supplement
-      }
-      else{
-        it
-      }
   }
 
   //setting strong text
