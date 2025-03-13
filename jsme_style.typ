@@ -94,7 +94,7 @@
     set par(leading: 4.5pt, justify: true)
     grid(
       columns: 2,
-      [#it.supplement #it.counter.display()　],
+      [#it.supplement #context it.counter.display()　],
       align(left)[#it.body]
     )
   }

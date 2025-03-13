@@ -170,7 +170,7 @@
     align: center,
     stroke: (top: none, bottom: none, right: none, left: none),
     table.hline(start: 0, stroke: 0.5pt, y: 0),
-    table.header([$T [degree.c]$], table.vline(start: 0, stroke: 0.5pt),
+    table.header([$T [upright(degree C)]$], table.vline(start: 0, stroke: 0.5pt),
     [$rho ["kg/m"^3]$], table.vline(start: 0, stroke: 0.5pt),
     [$c_p ["J/(kg" dot "K)"]$], table.vline(start: 0, stroke: 0.5pt),
     [$eta ["Pa" dot upright(s)]$], table.vline(start: 0, stroke: 0.5pt),
